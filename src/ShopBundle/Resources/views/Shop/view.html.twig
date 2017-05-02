@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Товар{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/user_main.css">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand navbar-link" href="#"> </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active" role="presentation"><a href="{{ path("homepage") }}">Главная </a></li>
+                        <li class="active" role="presentation"><a href="#">Пункт 2</a></li>
+                        <li class="active" role="presentation"><a href="#">Пункт 3</a></li>
+                        <li class="active" role="presentation"><a href="#">Пункт 4</a></li>
+                        <li class="active" role="presentation"><a href="#">Пункт 5</a></li>
+                        <li class="active" role="presentation"><a href="#">Пункт 6</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container post">
+        <div class="row">
+            <div class="col-md-8 post-title">
+                <h1 class="text-center">Товар: {{ shop.name }} </h1>
+                <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                            <div class="modal-content">
+                                <b>id -> {{ shop.id }}</b><br>
+                                <b>Имя -> {{ shop.name }}</b><br>
+                                <b>Категория -> {{ shop.category }}</b><br>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1 post-body">
+                <p class="lead text-uppercase text-center text-muted">Категории</p>
+                <hr style="background-color: #9ea1ff; height: 2px;">
+                <a href="{{ path("category_view", {'category' : 'category1'}) }}"><div class="well" style="text-align: center;"><b>Категория 1</b></div></a>
+                <a href="{{ path("category_view", {'category' : 'category2'}) }}"><div class="well" style="text-align: center;"><b>Категория 2</b></div></a>
+                <a href="{{ path("category_view", {'category' : 'category3'}) }}"><div class="well" style="text-align: center;"><b>Категория 3</b></div></a>
+                <a href="{{ path("category_view", {'category' : 'category4'}) }}"><div class="well" style="text-align: center;"><b>Категория 4</b></div></a>
+                <a href="{{ path("category_view", {'category' : 'category5'}) }}"><div class="well" style="text-align: center;"><b>Категория 5</b></div></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <h5>Copyright © 2017</h5></footer>
+{% block javascripts %}
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+{% endblock %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: kirill
+ * Date: 02.05.2017
+ * Time: 12:12
+ */
+
+namespace ShopBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Class Shop
+ * @package ShopBundle\Entity
+ * @ORM\Table(name="shop")
+ * @ORM\Entity
+ */
+
+class Shop
+{
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $category;
+
+}

@@ -1,0 +1,11 @@
+homepage:
+  path: site.com/
+  defaults: { _controller: ShopBundle:Shop:homepage}
+
+shop_view:
+  path: site.com/item/{name}
+  defaults: { _controller: ShopBundle:Shop:shopView}
+
+category_view:
+  path: site.com/category/{category}
+  defaults: { _controller: ShopBundle:Shop:category}
